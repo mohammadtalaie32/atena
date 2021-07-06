@@ -10,6 +10,9 @@
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/fonts.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+    <link rel="stylesheet" href="{{ asset('fonts/lalezare.css') }}">
+
     <style>.ie-panel{display: none;background: #212121;padding: 10px 0;box-shadow: 3px 3px 5px 0 rgba(0,0,0,.3);clear: both;text-align:center;position: relative;z-index: 1;} html.ie-10 .ie-panel, html.lt-ie-10 .ie-panel {display: block;}</style>
 </head>
 <body>
@@ -19,7 +22,8 @@
         <div class="cssload-container">
             <div class="cssload-speeding-wheel"></div>
         </div>
-        <p>Loading...</p>
+        <br>
+        <p style="direction: rtl" class="lalezar tw-tracking-wide">در حال بارگذاری</p>
     </div>
 </div>
 <div class="page">
@@ -30,58 +34,40 @@
                 <div class="rd-navbar-main-outer">
                     <div class="rd-navbar-main">
                         <div class="rd-nav-item">
-                            <div class="btn-wrap"><a class="button button-secondary button-sm" href="#">Get A Massage</a></div>
+                            <div class="btn-wrap"><a class="button button-secondary button-sm lalezar tw-font-thin" href="#">رزرو وقت</a></div>
                         </div>
                         <!--RD Navbar Panel-->
 
-                        <div class="rd-navbar-main-element">
-                            <div class="rd-navbar-nav-wrap">
-                                <ul class="rd-navbar-nav">
-                                    <li class="rd-nav-item active"><a class="rd-nav-link" href="index.html">Home</a>
+                        <div class="tw-rd-navbar-panel "></div>
+
+                        <div class="rd-navbar-main-element lalezar">
+                            <div class="rd-navbar-nav-wrap ">
+                                <ul class="rd-navbar-nav" >
+                                    <li class="rd-nav-item @if(request()->path() == '/contact') active @endif"><a class="rd-nav-link" href="index.html">تماس با ما</a>
                                     </li>
-                                    <li class="rd-nav-item"><a class="rd-nav-link" href="gift-vouchers.html">Gift Vouchers</a>
+                                    <li class="rd-nav-item @if(request()->path() == '/about') active @endif"><a class="rd-nav-link" href="gift-vouchers.html">درباره ما</a>
                                     </li>
-                                    <li class="rd-nav-item"><a class="rd-nav-link" href="about.html">About</a>
+                                    <li class="rd-nav-item @if(request()->path() == '/') active @endif"><a class="rd-nav-link" href="about.html">خانه</a>
                                     </li>
-                                    <li class="rd-nav-item"><a class="rd-nav-link" href="massage.html">Massage</a>
-                                        <ul class="rd-menu rd-navbar-dropdown">
-                                            <li class="rd-dropdown-item"><a class="rd-dropdown-link" href="single-massage.html">Single Massage</a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li class="rd-nav-item"><a class="rd-nav-link" href="contacts.html">Contacts</a>
-                                    </li>
-                                    <li class="rd-nav-item"><a class="rd-nav-link" href="#">Pages</a>
-                                        <ul class="rd-menu rd-navbar-dropdown">
-                                            <li class="rd-dropdown-item"><a class="rd-dropdown-link" href="typography.html">Typography</a>
-                                            </li>
-                                            <li class="rd-dropdown-item"><a class="rd-dropdown-link" href="buttons.html">Buttons</a>
-                                            </li>
-                                            <li class="rd-dropdown-item"><a class="rd-dropdown-link" href="forms.html">Forms</a>
-                                            </li>
-                                            <li class="rd-dropdown-item"><a class="rd-dropdown-link" href="tabs-and-accordions.html">Tabs and accordions</a>
-                                            </li>
-                                            <li class="rd-dropdown-item"><a class="rd-dropdown-link" href="privacy-policy.html">Privacy policy</a>
-                                            </li>
-                                            <li class="rd-dropdown-item"><a class="rd-dropdown-link" href="under-construction.html">Under Construction</a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                          screens: {
-          'sm': '576px',
-          'md': '768px',
-          'lg': '992px',
-          'xl': '1200px',
-      }      </ul>
+                           </ul>
                             </div>
                         </div>
 
-                        <div class="rd-navbar-panel">
-
-                            <div class="rd-navbar-brand">
-                                <a class="brand" href="index.html"><img class="brand-logo-dark" src="images/logo.png" alt="" width="80px" /></a>
+                        <div class="rd-navbar-panel tw-grid tw-grid-cols-2">
+                            <div class="tw-justify-items-start">
+                                <button class="rd-navbar-toggle" data-rd-navbar-toggle=".rd-navbar-nav-wrap"><span></span></button>
                             </div>
 
+                            <div class="rd-navbar-brand tw-grid tw-grid-cols-12 lg:tw-grid-cols-2 tw-w-full" style="text-align: right">
+                                <div class="tw-col-span-10 lg:tw-col-span-1 tw-mr-1">
+                                    <div class="tw-mt-1 tw-text-right lalezar tw-text-xl tw-font-medium tw-italic" style="direction: rtl;color:#190050"> کلینیک زیبایی</div>
+                                    <div class="tw-text-right lalezar tw-mt-0 tw-text-xl tw-font-light tw-px-auto tw-w-full tw-pr-1 tw-italic" style="color: #8782a6">آتنا بیوتی</div>
+                                </div>
+                                <div class="">
+                                    <a class="brand" href="index.html"><img class="brand-logo-dark" src="images/logo.png" alt="" width="80px" /></a>
+                                </div>
+
+                            </div>
 
                         </div>
 
@@ -91,25 +77,42 @@
         </div>
     </header>
     <!--Main bunner-->
-    <div class="section section-main-bunner context-dark" id="home">
-        <div class="main-bunner-img bg-overlay-1" style="background-image: url(&quot;images/slide-01.jpg&quot;); background-size: cover;"></div>
-        <div class="main-bunner-inner">
-            <div class="container wide">
-                <div class="row justify-content-left">
-                    <div class="col-lg-5">
-                        <h1 data-caption-animate="fadeInUp" data-caption-delay="100">Massage <br class="br-none"> On Demand</h1>
-                        <p class="lead text-custom-blue" data-caption-animate="fadeInUp" data-caption-delay="250">Are you tired and exhausted? Do you need to relax and tidy up your body and health? Try our massage today!</p>
-                        <div class="btn-wrap">
-                            <div class="group-xxl group-middle"><a class="button button-primary button-md button-round-2" href="#" data-caption-animate="fadeInUp" data-caption-delay="450"> Book Now</a><a class="button button-white button-md button-round-2" href="#" data-caption-animate="fadeInUp" data-caption-delay="450">Buy As Gift</a></div>
-                        </div>
-                        <div class="phone-wrap phone-wrap-2">
-                            <div class="phone-link-title">P:</div><a class="phone-link" href="tel:#"> 1 000 234 7890</a>
-                        </div>
-                        <p class="text-custom-blue">178 West 27th Street, Suite 527, New York NY 10012, United States</p>
+    <div style="background-image: url('{{ asset('images/pattern.png') }}')" class="tw-py-36" id="home">
+        <div class="container tw-grid tw-grid-cols-2">
+            <div>
+                <img src="{{ asset('images/title.png') }}" class="tw-rounded-full tw-shadow-md" alt="">
+            </div>
+            <div class="main-bunner-inner">
+                <div class="container wide">
+                    <div class="justify-content-right tw-text-right lalezar" style="direction: rtl">
+
+                            <h1 class="tw-mt-9 lalezar tw-text-6xl" data-caption-animate="fadeInUp" data-caption-delay="100">کلینیک زیبایی آتنا بیوتی</h1>
+                            <p class="lead text-custom-blue tw-mt-8" data-caption-animate="fadeInUp" data-caption-delay="250">
+                                لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است.
+                            </p>
+
+                            <div class="tw-mt-10">
+                                <div class="group-xxl group-middle lalezar">
+                                    <a class="button button-primary button-md button-round-2 lalezar tw-font-thin" href="#" data-caption-animate="fadeInUp" data-caption-delay="450">رزرو وقت</a>
+                                    <a class="button button-white button-md button-round-2 lalezar tw-font-thin" href="#" data-caption-animate="fadeInUp" data-caption-delay="450">آشنایی بیشتر</a>
+                                </div>
+                            </div>
+
+
+                            <p class="lalezar tw-tracking-widest tw-font-light tw-text-4xl tw-mt-12" style="direction: ltr">
+                                09302303030 | 071 - 32323232
+                            </p>
+
+
+                        <p class="text-custom-blue tw-font-thin tw-mt-4" data-caption-animate="fadeInUp" data-caption-delay="250">
+                            نیایش ، انتهای کوچه هشتم ، ساختمان بهار ، طبقه اول
+                        </p>
+
                     </div>
                 </div>
             </div>
         </div>
+
     </div>
     <!--Testimonials-->
     <div class="section section-lg bg-gray-150">
